@@ -1,7 +1,15 @@
 import React from "react";
-
+import { Accounts } from "meteor/accounts-base";
 const Link = () => {
-  return <h1>Link</h1>;
+  const onLogout = () => {
+    Accounts.logout();
+  };
+  return (
+    <div>
+      <h1>your links </h1>
+      <button onClick={onLogout}> Logout </button>
+    </div>
+  );
 };
 
 export default Link;
