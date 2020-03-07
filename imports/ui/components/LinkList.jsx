@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { Meteor } from "meteor/meteor";
 import { Links } from "../../apis/links";
 
 class LinkList extends Component {
   state = { links: [] };
   componentDidMount() {
+    Meteor.subscribe("links");
     this.linkTracker = Tracker.autorun(() => {
       const links = Links.find().fetch();
       this.setState({ links });
@@ -12,7 +14,7 @@ class LinkList extends Component {
   componentWillUnmount() {
     this.linkTracker.stop();
   }
-  renderListListItems = () => {
+  renderListItems = () => {
     const links = this.state.links.map(link => (
       <li key={link._id}>{link.url}</li>
     ));
@@ -22,7 +24,7 @@ class LinkList extends Component {
     return (
       <div>
         <p>Links List</p>
-        <div>{this.renderListListItems()}</div>
+        <div>{this.renderListItems()}</div>
       </div>
     );
   }
