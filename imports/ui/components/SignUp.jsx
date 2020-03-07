@@ -18,10 +18,8 @@ class SignUp extends React.Component {
       console.log("Signup callback ", err);
       if (err !== undefined) {
         this.setState({ error: err.reason });
-      }
+      } else this.setState({ error: "" });
     });
-
-    // this.setState({ error: "" });
   };
   render() {
     let { error } = this.state;

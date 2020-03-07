@@ -15,7 +15,7 @@ class Login extends React.Component {
       console.log("Login callback ", err);
       if (err !== undefined) {
         this.setState({ error: err.reason });
-      }
+      } else this.setState({ error: "" });
     });
   };
   render() {
