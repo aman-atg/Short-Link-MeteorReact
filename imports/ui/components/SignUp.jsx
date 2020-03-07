@@ -10,7 +10,10 @@ class SignUp extends React.Component {
     e.preventDefault();
     let email = e.target.email.value;
     let password = e.target.password.value;
-
+    if (password.length < 9) {
+      this.setState({ error: "Password must be greater than 8 characters" });
+      return;
+    }
     Accounts.createUser({ email, password }, err => {
       console.log("Signup callback ", err);
       if (err !== undefined) {
