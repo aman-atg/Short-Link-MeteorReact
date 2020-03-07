@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Tracker } from "meteor/tracker";
 //
 import App, { onAuthChange } from "../imports/ui/App";
-
+import "../startup/simpl-schema-config";
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
   onAuthChange(isAuthenticated);
