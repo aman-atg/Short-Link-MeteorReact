@@ -24,7 +24,7 @@ class Login extends React.Component {
       <div>
         {error ? <p>{error}</p> : undefined}
 
-        <form onSubmit={this.onFormSubmit}>
+        <form noValidate onSubmit={this.onFormSubmit}>
           <input type="email" name="email" placeholder="abc@example.com" />
           <input
             type="password"
