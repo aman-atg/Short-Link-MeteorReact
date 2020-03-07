@@ -1,6 +1,6 @@
 import React from "react";
 import { Accounts } from "meteor/accounts-base";
-import { Links } from "../../apis/links";
+import { Meteor } from "meteor/meteor";
 import LinkList from "./LinkList";
 const Link = () => {
   const onLogout = () => {
@@ -9,9 +9,8 @@ const Link = () => {
   const onFormSubmit = e => {
     e.preventDefault();
     const url = e.target.url.value.trim();
-    Links.insert({ url }, err => {
-      console.log("links form : ", err);
-    });
+    Meteor.call("links.insert", url);
+    e.target.url.value = "";
   };
   return (
     <div>
