@@ -13,6 +13,6 @@ Accounts.validateNewUser(user => {
     }).validate({ email });
     return true;
   } catch (error) {
-    throw new Meteor.Error(400, error.message);
+    throw new Meteor.Error(400, error.message); //without Meteor.Error... the error will be shown only on server
   }
 });
