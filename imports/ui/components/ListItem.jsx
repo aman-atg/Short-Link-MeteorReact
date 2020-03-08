@@ -1,3 +1,4 @@
+import { Meteor } from "meteor/meteor";
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import Clipboard from "clipboard";
@@ -23,13 +24,20 @@ class ListItem extends Component {
     this.copyClipboard.destroy();
   }
   render() {
-    const { props } = this;
+    const { props, state } = this;
     return (
       <Fragment>
         <p>{props.shortUrl}</p>
         <p>{props.url}</p>
         <button ref={this.copyBtn} data-clipboard-text={props.shortUrl}>
-          {this.state.copyBtnValue}
+          {state.copyBtnValue}
+        </button>
+        <button
+          onClick={() => {
+            Meteor.call("link.setVisibility", props._id, props.visible);
+          }}
+        >
+          {props.visible ? "Hide" : "UnHide"}
         </button>
       </Fragment>
     );
@@ -41,5 +49,6 @@ ListItem.propTypes = {
   _id: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
   shortUrl: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
   url: PropTypes.string.isRequired
 };
