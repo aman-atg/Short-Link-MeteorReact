@@ -1,5 +1,5 @@
 {
-  "name": "shortLnk",
+  "name": "short-link",
   "private": true,
   "scripts": {
     "start": "meteor run",
