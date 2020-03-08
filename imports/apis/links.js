@@ -6,7 +6,7 @@ import SimpleSchema from "simpl-schema";
 export const Links = new Mongo.Collection("links");
 if (Meteor.isServer) {
   Meteor.publish("links", () => {
-    return Links.find({ userId: Meteor.userId(), visible: true });
+    return Links.find({ userId: Meteor.userId() });
   });
 }
 
@@ -42,7 +42,4 @@ Meteor.methods({
       { $set: { visible: !visible } }
     );
   }
-  // 'links.showHidden'(userId,flg){
-  //   Links.update({userId})
-  // }
 });
