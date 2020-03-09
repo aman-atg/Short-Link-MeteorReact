@@ -8,8 +8,8 @@ const Link = () => {
     <div>
       <PrivateHeader title="Your Links" />
       <Toggler />
-      <LinkList />
       <AddLink />
+      <LinkList />
     </div>
   );
 };
