@@ -3,7 +3,7 @@ import { Session } from "meteor/session";
 import { Tracker } from "meteor/tracker";
 class Toggler extends React.Component {
   state = {
-    showVisible: true
+    showVisible: Session.get("showVisible")
   };
   componentDidMount() {
     this.myTracker = Tracker.autorun(() => {
@@ -18,7 +18,7 @@ class Toggler extends React.Component {
     return (
       <div>
         <label>
-          Show Hidden Links :{" "}
+          Show Hidden Links :
           <input
             type="checkbox"
             onChange={e => {
