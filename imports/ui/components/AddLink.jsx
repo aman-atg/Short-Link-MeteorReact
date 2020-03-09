@@ -6,15 +6,16 @@ class AddLink extends React.Component {
     url: ""
   };
   onUrlChange = e => {
-    const url = e.target.url.value;
+    const url = e.target.value;
     this.setState({ url });
   };
   render() {
     const onFormSubmit = e => {
       e.preventDefault();
       const { url } = this.state;
-      Meteor.call("links.insert", url.trim());
-      this.setState({ url: "" });
+      Meteor.call("links.insert", url.trim(), (err, res) => {
+        if (!err) this.setState({ url: "" });
+      });
     };
 
     return (
