@@ -50,5 +50,7 @@ ListItem.propTypes = {
   userId: PropTypes.string.isRequired,
   shortUrl: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  visitedCount: PropTypes.number.isRequired,
+  lastVisitedAt: PropTypes.number
 };
