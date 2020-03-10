@@ -46,6 +46,7 @@ class AddLink extends React.Component {
           }}
           onRequestClose={() => this.handleModalClose()}
         >
+          <h1>Add Link</h1>
           <form className="boxed-view__form" onSubmit={onFormSubmit}>
             <input
               ref={urlRef}
