@@ -24,20 +24,25 @@ class SignUp extends React.Component {
   render() {
     let { error } = this.state;
     return (
-      <div>
-        {error ? <p>{error}</p> : undefined}
-        <h1>Join short Lnk</h1>
-        <form noValidate onSubmit={this.onFormSubmit}>
-          <input type="email" name="email" placeholder="abc@example.com" />
-          <input
-            type="password"
-            name="password"
-            placeholder="myStrongPassword"
-          />
-          <button>Create Account</button>
-        </form>
-
-        <Link to="/">Already have an account</Link>
+      <div className="boxed-view">
+        <div className="boxed-view__box">
+          {error ? <p>{error}</p> : undefined}
+          <h1>Join short Lnk</h1>
+          <form
+            className="boxed-view__form"
+            noValidate
+            onSubmit={this.onFormSubmit}
+          >
+            <input type="email" name="email" placeholder="abc@example.com" />
+            <input
+              type="password"
+              name="password"
+              placeholder="myStrongPassword"
+            />
+            <button className="button"> Create Account</button>
+            <Link to="/"> Already have an account?</Link>
+          </form>
+        </div>
       </div>
     );
   }
