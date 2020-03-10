@@ -21,20 +21,24 @@ class Login extends React.Component {
   render() {
     let { error } = this.state;
     return (
-      <div>
-        {error ? <p>{error}</p> : undefined}
-
-        <form noValidate onSubmit={this.onFormSubmit}>
-          <input type="email" name="email" placeholder="abc@example.com" />
-          <input
-            type="password"
-            name="password"
-            placeholder="myStrongPassword"
-          />
-          <button>Login</button>
-        </form>
-
-        <Link to="/signup">Create an account.</Link>
+      <div className="boxed-view">
+        <div className="boxed-view__box">
+          <h1>Login </h1> {error ? <p>{error}</p> : undefined}
+          <form
+            className="boxed-view__form"
+            noValidate
+            onSubmit={this.onFormSubmit}
+          >
+            <input type="email" name="email" placeholder="abc@example.com" />
+            <input
+              type="password"
+              name="password"
+              placeholder="myStrongPassword"
+            />
+            <button className="button">Login</button>
+            <Link to="/signup">Create an account</Link>
+          </form>
+        </div>
       </div>
     );
   }
