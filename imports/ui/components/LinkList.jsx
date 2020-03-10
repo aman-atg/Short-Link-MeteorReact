@@ -25,7 +25,6 @@ class LinkList extends Component {
   render() {
     return (
       <div>
-        <p>Links List</p>
         <div>{this.renderListItems()}</div>
       </div>
     );
