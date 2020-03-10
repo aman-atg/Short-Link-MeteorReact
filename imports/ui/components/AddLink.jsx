@@ -28,11 +28,16 @@ class AddLink extends React.Component {
     return (
       <Fragment>
         {this.state.err ? <p>{this.state.err}</p> : undefined}
-        <button onClick={() => this.setState({ isOpen: true })}>
+        <button
+          className=" button"
+          onClick={() => this.setState({ isOpen: true })}
+        >
           + Add Link
         </button>
 
         <ReactModal
+          className="boxed-view__box"
+          overlayClassName="boxed-view boxed-view--modal"
           ariaHideApp={false}
           isOpen={this.state.isOpen}
           contentLabel="Add Links"
@@ -41,7 +46,7 @@ class AddLink extends React.Component {
           }}
           onRequestClose={() => this.handleModalClose()}
         >
-          <form onSubmit={onFormSubmit}>
+          <form className="boxed-view__form" onSubmit={onFormSubmit}>
             <input
               ref={urlRef}
               type="text"
@@ -49,9 +54,15 @@ class AddLink extends React.Component {
               onChange={this.onUrlChange}
               value={this.state.url}
             />
-            <button>Submit</button>
+            <button className="button">Submit</button>
+            <button
+              type="button"
+              className="button button-secondary"
+              onClick={() => this.handleModalClose()}
+            >
+              Cancel
+            </button>
           </form>
-          <button onClick={() => this.handleModalClose()}>Cancel</button>
         </ReactModal>
       </Fragment>
     );
