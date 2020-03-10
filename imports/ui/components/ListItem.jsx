@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import Clipboard from "clipboard";
+import moment from "moment";
 class ListItem extends Component {
   state = {
     copyBtnValue: "Copy"
@@ -23,16 +24,42 @@ class ListItem extends Component {
   componentWillUnmount() {
     this.copyClipboard.destroy();
   }
+  renderStats = () => {
+    const visitMsg = this.props.visitedCount === 1 ? "visit" : "visits";
+    let visitedMsg = null;
+    if (!!this.props.lastVisitedAt)
+      visitedMsg = ` (visited ${moment(this.props.lastVisitedAt).fromNow()})`;
+    return (
+      <p>
+        {this.props.visitedCount} {visitMsg}
+        {visitedMsg}
+      </p>
+    );
+  };
   render() {
     const { props, state } = this;
     return (
       <Fragment>
         <p>{props.shortUrl}</p>
         <p>{props.url}</p>
-        <button ref={this.copyBtn} data-clipboard-text={props.shortUrl}>
+        {this.renderStats()}
+        <a
+          className=" button button--pill button--link"
+          href={props.shortUrl}
+          target="_blank"
+        >
+          Visit
+        </a>
+
+        <button
+          className=" button button--pill"
+          ref={this.copyBtn}
+          data-clipboard-text={props.shortUrl}
+        >
           {state.copyBtnValue}
         </button>
         <button
+          className=" button button--pill"
           onClick={() => {
             Meteor.call("link.setVisibility", props._id, props.visible);
           }}
