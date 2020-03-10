@@ -20,14 +20,13 @@ class AddLink extends React.Component {
       const { url } = this.state;
       Meteor.call("links.insert", url.trim(), (err, res) => {
         if (!err) this.setState({ url: "", err: "" });
-        else this.setState({ err });
+        else this.setState({ err: err.reason });
       });
     };
 
     const urlRef = React.createRef();
     return (
       <Fragment>
-        {this.state.err ? <p>{this.state.err}</p> : undefined}
         <button
           className=" button"
           onClick={() => this.setState({ isOpen: true })}
@@ -46,6 +45,8 @@ class AddLink extends React.Component {
           }}
           onRequestClose={() => this.handleModalClose()}
         >
+          {this.state.err ? <p>{this.state.err}</p> : undefined}
+
           <h1>Add Link</h1>
           <form className="boxed-view__form" onSubmit={onFormSubmit}>
             <input
