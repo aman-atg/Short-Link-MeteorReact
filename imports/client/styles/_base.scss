@@ -38,3 +38,15 @@ input[type="password"] {
   margin-bottom: $space;
   padding: $input-spacing;
 }
+//media-queries
+@media (max-width: 400px) {
+  .button {
+    font-size: 1rem !important;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  body {
+    font-size: 10px;
+  }
+}
