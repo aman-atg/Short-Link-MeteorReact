@@ -7,9 +7,11 @@ const Link = () => {
   return (
     <div>
       <PrivateHeader title="Your Links" />
-      <Toggler />
-      <AddLink />
-      <LinkList />
+      <div className="page-content">
+        <Toggler />
+        <AddLink />
+        <LinkList />
+      </div>
     </div>
   );
 };
