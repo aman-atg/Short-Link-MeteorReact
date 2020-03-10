@@ -30,7 +30,7 @@ class ListItem extends Component {
     if (!!this.props.lastVisitedAt)
       visitedMsg = ` (visited ${moment(this.props.lastVisitedAt).fromNow()})`;
     return (
-      <p>
+      <p className="item__message">
         {this.props.visitedCount} {visitMsg}
         {visitedMsg}
       </p>
@@ -39,9 +39,9 @@ class ListItem extends Component {
   render() {
     const { props, state } = this;
     return (
-      <Fragment>
-        <p>{props.shortUrl}</p>
-        <p>{props.url}</p>
+      <div className="item">
+        <h2>{props.url}</h2>
+        <p className="item__message">{props.shortUrl}</p>
         {this.renderStats()}
         <a
           className=" button button--pill button--link"
@@ -66,7 +66,7 @@ class ListItem extends Component {
         >
           {props.visible ? "Hide" : "UnHide"}
         </button>
-      </Fragment>
+      </div>
     );
   }
 }
