@@ -19,12 +19,10 @@ class AddLink extends React.Component {
       e.preventDefault();
       const { url } = this.state;
       Meteor.call("links.insert", url.trim(), (err, res) => {
-        if (!err) this.setState({ url: "", err: "" });
-        else 
-          {
-            this.setState({ err: err.reason });
-            handleModalClose();
-          }
+        if (!err) {
+          this.setState({ url: "", err: "" });
+          this.handleModalClose();
+        } else this.setState({ err: err.reason });
       });
     };
 

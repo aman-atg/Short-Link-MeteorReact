@@ -50,7 +50,6 @@ class ListItem extends Component {
         >
           Visit
         </a>
-
         <button
           className=" button button--pill"
           ref={this.copyBtn}
@@ -65,6 +64,14 @@ class ListItem extends Component {
           }}
         >
           {props.visible ? "Hide" : "UnHide"}
+        </button>
+        <button
+          className=" button button--pill"
+          onClick={() => {
+            Meteor.call("links.delete", props._id);
+          }}
+        >
+          Delete
         </button>
       </div>
     );
