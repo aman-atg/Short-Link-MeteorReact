@@ -6,7 +6,7 @@ import Toggler from "./Toggler";
 const Link = () => {
   return (
     <div>
-      <PrivateHeader title="Your Links" />
+      <PrivateHeader title="MasterLink" />
       <div className="page-content">
         <Toggler />
         <AddLink />
