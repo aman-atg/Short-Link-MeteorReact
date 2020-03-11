@@ -48,6 +48,9 @@ Meteor.methods({
         $set: { lastVisitedAt: new Date().getTime() }
       }
     );
+  },
+  "links.delete"(_id) {
+    Links.remove({ _id });
   }
 });
 
