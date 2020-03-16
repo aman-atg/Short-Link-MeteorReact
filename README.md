@@ -30,14 +30,14 @@ meteor
 
 ## Built With
 
-* [MeteorJs] (https://meteor.com) - A free and open-source isomorphic JavaScript web framework written using Node.js
-* [NodeJs] (https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
-* [ReactJs] (https://reactjs.org) - A JavaScript library for building user interfaces
-* [ClipboardJs] (https://clipboardjs.com) - A modern approach to copy text to clipboard
-* [MomentJs] (https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript
-* [Javascript] (https://www.javascript.com/) - High-level, interpreted programming language
-* [HTML] (https://www.html.com/) - Standard markup language
-* [SCSS] (https://sass-lang.com) - CSS with superpowers
+* [MeteorJs](https://meteor.com) - A free and open-source isomorphic JavaScript web framework written using Node.js
+* [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+* [ReactJs](https://reactjs.org) - A JavaScript library for building user interfaces
+* [ClipboardJs](https://clipboardjs.com) - A modern approach to copy text to clipboard
+* [MomentJs](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript
+* [Javascript](https://www.javascript.com/) - High-level, interpreted programming language
+* [HTML](https://www.html.com/) - Standard markup language
+* [SCSS](https://sass-lang.com) - CSS with superpowers
 
 ## Authors
 
