@@ -33,12 +33,8 @@ class SignUp extends React.Component {
             noValidate
             onSubmit={this.onFormSubmit}
           >
-            <input type="email" name="email" placeholder="abc@example.com" />
-            <input
-              type="password"
-              name="password"
-              placeholder="myStrongPassword"
-            />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
             <button className="button"> Create Account</button>
             <Link to="/"> Already have an account?</Link>
           </form>
