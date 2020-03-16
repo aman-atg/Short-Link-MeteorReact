@@ -41,7 +41,7 @@ meteor
 
 ## Authors
 
-* **Aman Ansari** (https://github.com/aman-atg)
+* **[Aman Ansari](https://github.com/aman-atg)**
 
 ## License
 
